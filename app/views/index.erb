@@ -1,0 +1,15 @@
+<h1> root page.  should eventually have register, login, possibly logout </h1>
+
+<nav>
+  <% if session[:id] %>
+    <form action="/sessions" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="LOGOUT">
+    </form>
+  <% else %>
+    <a href="/users/new">REGISTER</a>
+    <br>
+    <br>
+    <a href="/sessions/new">LOGIN</a>
+  <% end %>
+</nav>
